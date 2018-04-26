@@ -13,3 +13,6 @@ spider が抜き出したデータを格納しておくためのオブジェク�
 
 ### Spiderの作成
 $ scrapy genspider news news.yahoo.co.jp
+
+### Spiderの実行
+$ scrapy crawl news
