@@ -13,6 +13,10 @@ class NewsSpider(scrapy.Spider):
 
     def parse(self, response):
         """
-        トップページのトピックス一覧から個々のトピックスへのリンクを抜き出して表示する。
+        トップページのトピックス一覧から個々のトピックスへのリンクを抜き出してたどる。
         """
-        print(response.css('ul.topics a::attr("href")').extract())
+        for url in response.css('ul.topics a::attr("href")').re(r'/pickup/\d+$'):
+            yield scrapy.Request(response.urljoin(url), self.parse_topics)
+
+    def parse_topics(self,response):
+        pass

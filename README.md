@@ -1,5 +1,8 @@
 # Scrapy
 
+## Intall
+
+$ pip install scrapy
 
 $ scrapy startproject myproject
 
@@ -16,3 +19,7 @@ $ scrapy genspider news news.yahoo.co.jp
 
 ### Spiderの実行
 $ scrapy crawl news
+
+
+### Scrapy Shell (Interactive Shell)
+$ scrapy shell {1}
