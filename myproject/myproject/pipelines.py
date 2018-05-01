@@ -26,3 +26,45 @@ class ValidationPipeline(object):
 
 
         return item # titleフィールドが正しく取得できている場合
+
+
+
+from pymongo import MongoClient
+
+class MongoPipeline(object):
+    """
+    ItemをMongoDBに保存するPipeline
+    """
+
+    def open_spider(self,spider):
+        """
+        Spiderの開始時にMongoDBに保存する
+        """
+
+        # ホストとポートを指定して、クライアントを作成
+        self.client = MOngoClient('localhost',27017)
+
+        # scraping-book データベースを取得
+        self.db = self.client['scraping-book']
+
+        # itemsコレクションを取得
+        self.collection = self.db['items']
+
+
+    def close_spider(self, spider):
+        """
+        Spiderの終了時にMongoDBへの接続を切断する
+        """
+
+        self.client.close()
+
+    def process_item(self, item, spider):
+        """
+        Itemをコレクションに追加する
+        """
+
+        # insert_one()の引数は書き換えられるので、コピーしたdictを渡す。
+        self.collection.insert_one(dict(item))
+
+        return item
+        
