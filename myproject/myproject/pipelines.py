@@ -31,6 +31,7 @@ class ValidationPipeline(object):
 
 from pymongo import MongoClient
 
+
 class MongoPipeline(object):
     """
     ItemをMongoDBに保存するPipeline
@@ -42,13 +43,13 @@ class MongoPipeline(object):
         """
 
         # ホストとポートを指定して、クライアントを作成
-        self.client = MOngoClient('localhost',27017)
+        self.client = MongoClient('localhost',27017)
 
         # scraping-book データベースを取得
-        self.db = self.client['scraping-book']
+        self.db = self.client['tabelog']
 
         # itemsコレクションを取得
-        self.collection = self.db['items']
+        self.collection = self.db['shops']
 
 
     def close_spider(self, spider):
@@ -67,4 +68,3 @@ class MongoPipeline(object):
         self.collection.insert_one(dict(item))
 
         return item
-        

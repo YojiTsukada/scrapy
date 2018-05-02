@@ -25,3 +25,18 @@ class Headline(scrapy.Item):
 item = Headline()
 item['title'] = 'Example'
 print(item['title']) # Exampleと表示される。
+
+
+
+class Restaurant(scrapy.Item):
+    """
+    食べログのレストラン情報
+    """
+
+    name = scrapy.Field()
+    address = scrapy.Field()
+    latitude = scrapy.Field()
+    longitude = scrapy.Field()
+    station = scrapy.Field()
+    score = scrapy.Field()
+    review = scrapy.Field()
