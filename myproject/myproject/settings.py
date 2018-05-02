@@ -70,9 +70,9 @@ DOWNLOAD_DELAY = 1
 #    'myproject.pipelines.ValidationPipeline': 300,
 #}
 
-ITEM_PIPELINES = {
-    'myproject.pipelines.MongoPipeline': 800,
-}
+#ITEM_PIPELINES = {
+#    'myproject.pipelines.MongoPipeline': 800,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
