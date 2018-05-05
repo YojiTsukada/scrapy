@@ -23,3 +23,11 @@ $ scrapy crawl news
 
 ### Scrapy Shell (Interactive Shell)
 $ scrapy shell {1}
+
+
+### For ElasticSearch
+'''
+$ brew install elasticseach
+$ elasticsearch-plugin install analysis-kuromoji
+$ pip install elasticsearch
+'''
