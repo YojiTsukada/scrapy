@@ -94,3 +94,14 @@ DOWNLOAD_DELAY = 1
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+# ダウンロードした画像ファイルの保存場所
+# ここでは、相対パスを指定しているので、Spider実行時のカレントディレクトリにimagesディレクトリ
+# が作成され、その中に保存される。
+FILES_STORE = 'images'
+
+# Spiderで、yiledしたItemを処理するパイプライン
+ITEM_PIPELINES = {
+    'scrapy.pipelines.files.FilesPipeline': 1
+}
