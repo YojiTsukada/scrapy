@@ -16,18 +16,22 @@ em{font-weight: bold; font-style: normal;}
 
 <!-- 検索フォーム -->
 <form>
-<input type="text name="q" value="{{query}}">
+<input type="text" name="q" value="{{query}}">
 <input type="submit" value="検索する">
 </form>
 
+
 <!-- 検索結果 -->
 <% for page in pages: %>
+
 <div>
-<h3><a href="{{page["_source"]["url"]}}">{{page["_source"]["title]}}
+<h3><a href="{{page["_source"]["url"]}}">{{page["_source"]["title"]}}
 </a></h3>
 
 <div class="link"> {{page["_source"]["url"]}} </div>
 <div class="fragment"> {{! page["highlight"]["content"][0]}} </div>
+
+
 </div>
 
 <% end %>

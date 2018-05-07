@@ -39,6 +39,16 @@ def search_pages(query):
                 "default_operator":"and"
             }
         },
+        "highlight":{
+            "fields":{
+                "content":{
+                    "fragment_size":150,
+                    "number_of_fragments":1,
+                    "no_match_size":150
+                }
+            }
+        }
+
     })
     return result['hits']['hits']
 
