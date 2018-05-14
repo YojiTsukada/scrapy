@@ -3,9 +3,12 @@
 
 # 画像ファイルは除外
 myproject/myproject/images/
+myproject/faces/*
 
 
 # キャッシュディレクトリは除外
 *.pyc
-myproject/myproject/spiders/__pycache__/
-myproject/myproject/__pycache__/
+myproject/myproject/__pycache__/settings.cpython-36.pyc
+myproject/myproject/__pycache__/*
+myproject/myproject/__pycache__/settings.cpython-36.pyc
+myproject/myproject/spiders/__pycache__/broad.cpython-36.pyc
